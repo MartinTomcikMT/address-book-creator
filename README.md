@@ -105,13 +105,13 @@ python .py
       </td>
       <td align="center">
         <a href="images/addressbook_adduser.jpg" target="_blank">
-          <img src="images/addressbook_addusers_small.jpg"/>
+          <img src="images/addressbook_adduser_small.jpg"/>
         </a><br/>
         <sub>Add user</sub>
       </td>
       <td align="center">
         <a href="images/addressbook_displayuser.jpg" target="_blank">
-          <img src="images/addressbook_displayuser_small.jpg"/>
+          <img src="images/addressbook_displayusers_small.jpg"/>
         </a><br/>
         <sub>Display users</sub>
       </td>
