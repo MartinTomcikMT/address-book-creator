@@ -4,12 +4,15 @@ import csv
 import os
 from pathlib import Path
 
+# Initialize colorama so colors reset automatically after each print
 init(autoreset=True)
 
+# Base directory for storing data files (goes two levels up from this file)
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 JSON_FILE = DATA_DIR / "contacts.json"
 CSV_FILE = DATA_DIR / "contacts.csv"
 
+# Simple ASCII banner shown at the top of the app
 ASCII_ART = r"""
      ___       _______   _______  .______       _______     _______.  _______.   .______     ______     ______    __  ___ 
     /   \     |       \ |       \ |   _  \     |   ____|   /       | /       |   |   _  \   /  __  \   /  __  \  |  |/  / 
@@ -19,19 +22,24 @@ ASCII_ART = r"""
 /__/     \__\ |_______/ |_______/ | _| `._____||_______|_______/ |_______/       |______/   \______/   \______/  |__|\__\ 
 """
 
+# Print banner in red
 def print_ascii_art():
     print(Fore.RED + ASCII_ART + Style.RESET_ALL)
 
+# Clear terminal screen (works on Windows and Unix)
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
+# Clear screen and show banner
 def show_header():
     clear_screen()
     print_ascii_art()
 
+# Small pause so user can read output before returning to menu
 def pause():
     input("\nPress Enter to return to menu...")
 
+# Let user choose storage format (JSON or CSV)
 def choose_file_type():
     while True:
         show_header()
@@ -49,8 +57,10 @@ def choose_file_type():
             print("\nInvalid option.")
             pause()
 
+# Load contacts from selected file type
 def load_contacts(file_type):
     if file_type == "json":
+        # If file doesn't exist, just return empty list
         if not JSON_FILE.exists():
             return []
 
@@ -58,6 +68,7 @@ def load_contacts(file_type):
             with open(JSON_FILE, "r", encoding="utf-8") as file:
                 return json.load(file)
         except json.JSONDecodeError:
+            # If file is broken, don't crash — just return empty list
             return []
 
     elif file_type == "csv":
@@ -68,6 +79,7 @@ def load_contacts(file_type):
         with open(CSV_FILE, "r", encoding="utf-8", newline="") as file:
             reader = csv.DictReader(file)
             for row in reader:
+                # Convert each row into our contact structure
                 contacts.append({
                     "name": row.get("name", ""),
                     "surname": row.get("surname", ""),
@@ -82,7 +94,9 @@ def load_contacts(file_type):
 
     return []
 
+# Save contacts back to file
 def save_contacts(contacts, file_type):
+    # Make sure data folder exists
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     if file_type == "json":
@@ -92,19 +106,14 @@ def save_contacts(contacts, file_type):
     elif file_type == "csv":
         with open(CSV_FILE, "w", encoding="utf-8", newline="") as file:
             fieldnames = [
-                "name",
-                "surname",
-                "address_name",
-                "address_number",
-                "city",
-                "country",
-                "phone",
-                "email"
+                "name", "surname", "address_name", "address_number",
+                "city", "country", "phone", "email"
             ]
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(contacts)
 
+# Display contacts in two-column layout (left = personal, right = address)
 def display_contacts(contacts):
     if not contacts:
         print("\nNo contacts found.")
@@ -113,6 +122,7 @@ def display_contacts(contacts):
     for index, contact in enumerate(contacts, start=1):
         print(f"\nContact #{index}")
 
+        # Left side = basic info
         left_column = [
             f"Name    : {contact.get('name', '-')}",
             f"Surname : {contact.get('surname', '-')}",
@@ -120,6 +130,7 @@ def display_contacts(contacts):
             f"Email   : {contact.get('email', '-')}",
         ]
 
+        # Right side = address info
         right_column = [
             f"Street  : {contact.get('address_name', '-')}",
             f"No.     : {contact.get('address_number', '-')}",
@@ -127,19 +138,19 @@ def display_contacts(contacts):
             f"Country : {contact.get('country', '-')}",
         ]
 
-        col_width = 40
+        col_width = 40  # spacing between columns
 
         for left, right in zip(left_column, right_column):
             print(f"{left.ljust(col_width)} | {right}")
 
         print("-" * 75)
 
+# Helper for editing: keeps old value if user presses Enter
 def update_field(current_value, label):
     new_value = input(f"{label} [{current_value}]: ").strip()
-    if new_value == "":
-        return current_value
-    return new_value
+    return current_value if new_value == "" else new_value
 
+# Edit selected contact
 def edit_contact(contacts, file_type):
     if not contacts:
         print("\nNo contacts to edit.")
@@ -161,6 +172,7 @@ def edit_contact(contacts, file_type):
         print(f"=== EDIT CONTACT #{edit_choice} ===")
         print("Press Enter to keep the current value.\n")
 
+        # Update each field one by one
         contact["name"] = update_field(contact.get("name", ""), "Name")
         contact["surname"] = update_field(contact.get("surname", ""), "Surname")
         contact["address_name"] = update_field(contact.get("address_name", ""), "Street name")
@@ -176,6 +188,7 @@ def edit_contact(contacts, file_type):
     except ValueError:
         print("\nPlease enter a valid number.")
 
+# Main loop of the program
 def main():
     file_type = choose_file_type()
     contacts = load_contacts(file_type)
@@ -198,6 +211,7 @@ def main():
             show_header()
             print("=== ADD CONTACT ===")
 
+            # Collect user input
             name = input("Enter name: ").strip()
             surname = input("Enter surname: ").strip()
             address_name = input("Enter street name: ").strip()
@@ -207,6 +221,7 @@ def main():
             phone = input("Enter phone: ").strip()
             email = input("Enter email: ").strip()
 
+            # Create new contact
             contact = {
                 "name": name,
                 "surname": surname,
