@@ -99,19 +99,19 @@ python .py
     <tr>
       <td align="center">
         <a href="images/addressbook_menu.jpg" target="_blank">
-          <img src="images/systeminfo_system_new_small.jpg"/>
+          <img src="images/addressbook_menu_small.jpg"/>
         </a><br/>
         <sub>System Info</sub>
       </td>
       <td align="center">
         <a href="images/addressbook_addusers.jpg" target="_blank">
-          <img src="images/systeminfo_cpu_small.jpg"/>
+          <img src="images/addressbook_addusers_small.jpg"/>
         </a><br/>
         <sub>CPU Info</sub>
       </td>
       <td align="center">
         <a href="images/addressbook_displaysuers.jpg" target="_blank">
-          <img src="images/systeminfo_memory_small.jpg"/>
+          <img src="images/addressbook_displayusers_small.jpg"/>
         </a><br/>
         <sub>Memory Info</sub>
       </td>
