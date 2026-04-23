@@ -101,19 +101,19 @@ python .py
         <a href="images/addressbook_menu.jpg" target="_blank">
           <img src="images/addressbook_menu_small.jpg"/>
         </a><br/>
-        <sub>System Info</sub>
+        <sub>Address Book menu</sub>
       </td>
       <td align="center">
         <a href="images/addressbook_addusers.jpg" target="_blank">
           <img src="images/addressbook_addusers_small.jpg"/>
         </a><br/>
-        <sub>CPU Info</sub>
+        <sub>Add user</sub>
       </td>
       <td align="center">
-        <a href="images/addressbook_displaysuers.jpg" target="_blank">
-          <img src="images/addressbook_displayusers_small.jpg"/>
+        <a href="images/addressbook_displaysuer.jpg" target="_blank">
+          <img src="images/addressbook_displayuser_small.jpg"/>
         </a><br/>
-        <sub>Memory Info</sub>
+        <sub>Display users</sub>
       </td>
     </tr>
   </table>
