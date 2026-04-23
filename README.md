@@ -123,7 +123,8 @@ python .py
 
 ## 📌 Future Improvements
 
-- 
+- Add search functionality and data validation.  
+- Refactor code structure and improve usability.
 
 ---
 
