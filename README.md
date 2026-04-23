@@ -95,7 +95,28 @@ python .py
 ## 📸 Screenshot
 
 <p align="center">
-  <img src="./images/addressbookcreator_system.jpg" width="80%"/>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="images/addressbook_menu.jpg" target="_blank">
+          <img src="images/systeminfo_system_new_small.jpg"/>
+        </a><br/>
+        <sub>System Info</sub>
+      </td>
+      <td align="center">
+        <a href="images/addressbook_addusers.jpg" target="_blank">
+          <img src="images/systeminfo_cpu_small.jpg"/>
+        </a><br/>
+        <sub>CPU Info</sub>
+      </td>
+      <td align="center">
+        <a href="images/addressbook_displaysuers.jpg" target="_blank">
+          <img src="images/systeminfo_memory_small.jpg"/>
+        </a><br/>
+        <sub>Memory Info</sub>
+      </td>
+    </tr>
+  </table>
 </p>
 
 ---
