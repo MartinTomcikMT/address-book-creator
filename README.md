@@ -104,13 +104,13 @@ python .py
         <sub>Address Book menu</sub>
       </td>
       <td align="center">
-        <a href="images/addressbook_addusers.jpg" target="_blank">
+        <a href="images/addressbook_adduser.jpg" target="_blank">
           <img src="images/addressbook_addusers_small.jpg"/>
         </a><br/>
         <sub>Add user</sub>
       </td>
       <td align="center">
-        <a href="images/addressbook_displaysuer.jpg" target="_blank">
+        <a href="images/addressbook_displayuser.jpg" target="_blank">
           <img src="images/addressbook_displayuser_small.jpg"/>
         </a><br/>
         <sub>Display users</sub>
