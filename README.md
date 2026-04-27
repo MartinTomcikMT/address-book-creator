@@ -8,6 +8,8 @@ Python application to describe work with data, creating, modifying and deleting 
 
 The goal of this project was to:
 
+* work with cycles and with document output by python
+* create easy readable and working address book with user-friendly design
 * 
 ---
 
