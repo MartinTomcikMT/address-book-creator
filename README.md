@@ -1,6 +1,6 @@
 # 🖥️ Address Book Creator (python)
 
-Python application to describe work with data, creating, modifying and deleting inputs in leight-weighed UI. 
+A simple command-line address book application written in Python. The application allows users to add, view, edit and delete contacts, and store contact data in JSON or CSV format.
 
 ---
 
@@ -15,8 +15,13 @@ The goal of this project was to:
 
 ## ⚙️ Features
 
-* user should be added, modified and removed
-* display all contacts in output document database
+* Add new contacts
+* View all saved contacts
+* Edit existing contacts
+* Delete contacts
+* Choose between JSON and CSV storage
+* Save contact data to local files
+* Simple colored command-line interface
 
 ---
 
@@ -31,8 +36,15 @@ The goal of this project was to:
 
 To run this script, make sure you have the following installed:
 
-- imported libraries: colorama, json, csv and os
-- installed python
+- Python 3.x
+- colorama
+
+Install dependencies:
+
+```bash
+pip install colorama
+
+```
 
 ### 💻 Supported environments
 
@@ -53,7 +65,7 @@ git clone https://github.com/MartinTomcikMT/address-book-creator.git
 ## ▶️ How to Run
 
 ```bash
-python addressbook.py
+python srd/addressbook.py
 ```
 
 ---
