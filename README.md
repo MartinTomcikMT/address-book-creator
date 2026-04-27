@@ -56,7 +56,10 @@ pip install colorama
 ## 🚀 Installation
 
 ```bash
+
 git clone https://github.com/MartinTomcikMT/address-book-creator.git
+cd address-book-creator
+python src/addressbook.py
 
 ```
 
@@ -80,9 +83,11 @@ python srd/addressbook.py
 
 ## 🧠 What I Learned
 
-* work with inputs from user and stored it in the output documents (json or csv)
-* how use while and if cycles within inside of functions
-* how make validation of inputs and check if output file is available
+- Working with user input in Python
+- Using loops and conditional logic inside functions
+- Reading and writing data to JSON and CSV files
+- Structuring a simple command-line application
+- Handling basic file checks and input validation
 
 ---
 
@@ -90,12 +95,11 @@ python srd/addressbook.py
 
 ### Problem:
 
-Output of display was not formatted as it was planned
+The contact display was difficult to read when all fields were printed in a simple list.
 
 ### Solution:
 
-
-
+I improved the output formatting by displaying contact details in a structured two-column layout and separating individual contacts with visual dividers.
 
 ---
 
@@ -117,7 +121,7 @@ Output of display was not formatted as it was planned
         <sub>Add user</sub>
       </td>
       <td align="center">
-        <a href="images/addressbook_displayuser.jpg" target="_blank">
+        <a href="images/addressbook_displayusers.jpg" target="_blank">
           <img src="images/addressbook_displayusers_small.jpg"/>
         </a><br/>
         <sub>Display users</sub>
@@ -125,6 +129,23 @@ Output of display was not formatted as it was planned
     </tr>
   </table>
 </p>
+
+---
+
+## Project Structure
+
+```text
+address-book-creator/
+├── data/
+│   └── contacts.json
+├── images/
+│   └── screenshots
+├── src/
+│   ├── addressbook.py
+├── .gitignore
+└── README.md
+
+```
 
 ---
 
