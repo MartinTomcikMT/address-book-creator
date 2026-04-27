@@ -132,7 +132,7 @@ I improved the output formatting by displaying contact details in a structured t
 
 ---
 
-## Project Structure
+## 📃 Project Structure
 
 ```text
 address-book-creator/
